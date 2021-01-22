@@ -1,10 +1,9 @@
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import users from './data/user.js';
 import products from './data/product.js';
 import User from './models/userModel.js';
 import Product from './models/productModel.js';
-// import Order from './models/orderModel.js'
+import Order from './models/orderModel.js';
 import connectDB from './config/db.js';
 
 dotenv.config();
@@ -13,7 +12,7 @@ connectDB();
 
 const importData = async () => {
   try {
-    // await Order.deleteMany();
+    await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
 
@@ -37,7 +36,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-    // await Order.deleteMany();
+    await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
 
